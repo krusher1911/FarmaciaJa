@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="br.com.farmaciaja.una.tidir.farmaciaja.activities.Act_Cadastro">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context="br.com.farmaciaja.una.tidir.farmaciaja.activities.Act_farmacias">
+
+        <include
+            android:id="@+id/app_bar"
+            layout="@layout/app_bar">
+
+        </include>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/branco"
+        android:padding="10dp"
+        android:layout_weight=".1">
+
+        <EditText
+            android:id="@+id/txtNome"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/hint_nome_cadastro"
+            android:singleLine="true"
+            android:phoneNumber="false" />
+
+        <EditText
+            android:id="@+id/txtEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/hint_email_cadastro"
+            android:inputType="textEmailAddress"
+            android:singleLine="true" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/txtDDD"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/hint_ddd_cadastro"
+                android:layout_weight=".8"
+                android:inputType="number"
+                android:singleLine="true"
+                android:phoneNumber="true" />
+
+
+            <EditText
+                android:id="@+id/txtTelefone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/hint_telefone_cadastro"
+                android:layout_weight=".2"
+                android:inputType="number"
+                android:singleLine="true"
+                android:phoneNumber="true" />
+
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/txtUsuario"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/hint_usuario_cadastro"
+            android:maxLength="10" />
+
+        <EditText
+            android:id="@+id/txtSenha"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/hint_senha_cadastro"
+            android:inputType="textPassword"
+            android:fontFamily="Roboto Regular"
+            android:maxLength="8" />
+
+        <EditText
+            android:id="@+id/txtConfirmarSenha"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/hint_confirmar_senha"
+            android:inputType="textPassword"
+            android:fontFamily="Roboto Regular"
+            android:maxLength="8" />
+
+        <CheckBox
+            android:id="@+id/chkLogarAutomaticamente"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/chk_logar_automaticamente"
+            android:fontFamily="Roboto Regular"
+            android:textSize="14sp"
+            android:padding="16dp"
+            android:layout_marginBottom="8dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp"
+        android:background="@color/branco">
+
+        <Button
+            android:id="@+id/btnCadastrarUsuario"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/material_button_raised"
+            android:text="@string/btn_cadastrar"
+            android:textColor="@color/branco"/>
+
+    </LinearLayout>
+
+</LinearLayout>

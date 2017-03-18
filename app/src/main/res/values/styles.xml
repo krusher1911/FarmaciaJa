@@ -1,0 +1,33 @@
+<resources>
+
+    <style name="AppTheme" parent="AppTheme.Base"/>
+
+    <style name="AppTheme.Base" parent="Theme.AppCompat.Light.NoActionBar">
+
+        <item name="android:colorPrimary">@color/primaryColor</item>
+        <item name="android:colorPrimaryDark">@color/primaryColorDark</item>
+        <item name="android:colorAccent">@color/accentColor</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:colorControlHighlight">@color/colorHighLight</item>
+        <item name="android:editTextStyle">@style/EditTextTheme</item>
+
+    </style>
+
+    <style name="EditTextTheme" parent="android:Widget.Material.EditText">
+        <item name="android:textSize">16sp</item>
+        <item name="android:fontFamily">Roboto Regular</item>
+        <item name="android:height">48dp</item>
+        <item name="android:paddingTop">16dp</item>
+        <item name="android:paddingBottom">16dp</item>
+        <item name="android:layout_marginBottom">8dp</item>
+    </style>
+
+    <style name="customToolBarTheme" parent="ThemeOverlay.AppCompat.Dark">
+
+        <item name="android:textColorPrimary">#FFFFFF</item>
+        <item name="android:textColorSecondary">#FFFFFF</item>
+        <item name="android:fontFamily">Roboto Thin</item>
+
+    </style>
+
+</resources>

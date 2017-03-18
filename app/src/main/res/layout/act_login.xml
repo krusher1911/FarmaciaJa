@@ -1,0 +1,91 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="br.com.farmaciaja.una.tidir.farmaciaja.activities.Act_Login"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/toobar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context="br.com.farmaciaja.una.tidir.farmaciaja.activities.Act_farmacias">
+
+        <include
+            android:id="@+id/app_bar"
+            layout="@layout/app_bar">
+
+        </include>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="10dp"
+        android:background="@color/branco"
+        android:layout_weight=".9"
+        >
+
+        <EditText
+            android:id="@+id/txtUsuarioLogin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/hint_usuario_login"/>
+
+        <EditText
+            android:id="@+id/txtSenhaLogin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/hint_senha_login"
+            android:fontFamily="Roboto Regular"
+            android:inputType="textPassword"/>
+
+        <Button
+            android:id="@+id/btnEntrar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/btn_Logar"
+            android:fontFamily="Roboto medium"
+            android:textColor="@color/branco"
+            android:background="@drawable/material_button_raised"
+
+            />
+
+        <Button
+            android:id="@+id/btnRecuperarSenha"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="?android:attr/borderlessButtonStyle"
+            android:background="@drawable/material_button_flat"
+            android:text="@string/btn_recuperar_senha"
+            android:textColor="@color/primaryColor"
+            android:layout_gravity="center_horizontal"
+            />
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp"
+        android:layout_weight=".0"
+        android:background="@color/branco">
+
+        <Button
+            android:id="@+id/btnCadastrar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/btn_quero_cadastrar"
+            android:fontFamily="Roboto medium"
+            android:textColor="@color/branco"
+            android:background="@drawable/material_button_raised"
+            />
+
+    </LinearLayout>
+
+</LinearLayout>

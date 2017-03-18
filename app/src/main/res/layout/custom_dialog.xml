@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@color/branco">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/dialogTittle"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fontFamily="Roboto Regular"
+                android:text="Titulo do Dialog"
+                android:textColor="@color/preto"
+                android:textSize="22sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/dialogContent"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fontFamily="Roboto Regular"
+                android:text="Corpo do dialog"
+                android:textColor="@color/cinza_escuro"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:paddingLeft="24dp"
+        android:padding="8dp"
+        >
+        <Button
+            android:id="@+id/btnSim"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/material_button_flat"
+            android:layout_gravity="end"
+            style="?android:attr/borderlessButtonStyle"
+            android:text="Yes"
+            android:textColor="@color/primaryColor"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+
+        <Button
+            android:id="@+id/btnNo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/material_button_flat"
+            android:layout_gravity="end"
+            style="?android:attr/borderlessButtonStyle"
+            android:text="No"
+            android:textColor="@color/primaryColor"
+            android:layout_alignParentTop="true"
+            android:layout_toLeftOf="@+id/btnSim"
+            android:layout_toStartOf="@+id/btnSim"
+            android:layout_marginRight="8dp"/>
+
+    </RelativeLayout>
+
+</LinearLayout>

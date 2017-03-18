@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+
+    tools:context="br.com.farmaciaja.una.tidir.farmaciaja.activities.Act_Map">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context="br.com.farmaciaja.una.tidir.farmaciaja.activities.Act_farmacias">
+
+        <include
+            android:id="@+id/app_bar"
+            layout="@layout/app_bar">
+
+        </include>
+
+    </RelativeLayout>
+
+    <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+
+        android:id="@+id/map"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:name="com.google.android.gms.maps.MapFragment"/>
+
+</LinearLayout>

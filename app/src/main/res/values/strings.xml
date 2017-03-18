@@ -1,0 +1,53 @@
+<resources>
+    <!--APP NAME-->
+    <string name="app_name">FarmaciaJA</string>
+
+    <!--TITULO ACTIVITIES-->
+    <string name="title_act_farmacias">Farmácias</string>
+    <string name="title_act_login">Faça seu Login</string>
+    <string name="title_act_cadastro">Faça seu Cadastro</string>
+    <string name="title_act_minha_conta">Minha Conta</string>
+
+    <!-- MENU/TOOLBAR-->
+    <string name="action_settings">Configurações</string>
+    <string name="action_procurar">Procurar</string>
+    <string name="drawer_open">open</string>
+    <string name="drawer_close">close</string>
+
+    <!-- BOTOES -->
+    <string name="btn_Logar">Entrar</string>
+    <string name="btn_logar_sair">Sair</string>
+    <string name="btn_recuperar_senha">Recuperar Senha</string>
+    <string name="btn_quero_cadastrar">Quero me cadastar</string>
+    <string name="btn_cadastrar">Cadastrar</string>
+    <string name="btn_cancelar">Cancelar</string>
+    <string name="btn_desconectar">Desconectar</string>
+
+    <!-- SLIDE MENU -->
+    <string name="saudacao_slide_menu">Seja Bem-vindo!</string>
+    <string name="logar_slide_menu">Entrar</string>
+    <string name="acessar_conta_slide_menu">Ver Minha Conta</string>
+
+    <!-- RECYCLER VIEW ITENS -->
+    <string name="item_farmacias">Fármacias</string>
+
+    <!-- EDIT TEXT HINT/ TEXT VIEW-->
+    <string name="hint_usuario_login">Usuário</string>
+    <string name="hint_senha_login">Senha</string>
+    <string name="hint_nome_cadastro">Nome</string>
+    <string name="hint_email_cadastro">Email</string>
+    <string name="hint_ddd_cadastro">DDD</string>
+    <string name="hint_telefone_cadastro">Telefone</string>
+    <string name="hint_usuario_cadastro">Usuário</string>
+    <string name="hint_senha_cadastro">Senha</string>
+    <string name="hint_confirmar_senha">Confirmar Senha</string>
+    <string name="txt_aberto">Aberto</string>
+    <string name="txt_fechado">Fechado</string>
+
+    <!-- CHECKBOX - RADIO BUTTON-->
+    <string name="chk_logar_automaticamente">Logar Automaticamente</string>
+
+    <!-- DIALOGS -->
+    <string name="titulo_atencao">Atenção</string>
+    <string name="dialog_desconectar">Deseja desconectar da sua conta?</string>
+</resources>
