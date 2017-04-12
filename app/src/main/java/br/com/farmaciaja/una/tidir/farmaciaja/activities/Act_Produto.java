@@ -1,6 +1,8 @@
 package br.com.farmaciaja.una.tidir.farmaciaja.activities;
 
 import android.content.Intent;
+import android.support.design.widget.TabLayout;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -9,21 +11,35 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.widget.TextView;
 
+import com.google.android.gms.maps.CameraUpdate;
+import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import Entidades.Produto;
 import adapters.ProdutoAdapter;
+import adapters.ViewPagerAdapter;
 import br.com.farmaciaja.una.tidir.farmaciaja.R;
+import fragments.RecyclerView_Produtos;
+import fragments.fragment_farmacia_info;
+
+import static br.com.farmaciaja.una.tidir.farmaciaja.R.id.map;
 
 public class Act_Produto extends AppCompatActivity implements OnMapReadyCallback {
     Toolbar toolbar;
+    TabLayout tabLayout;
+    ViewPager viewPager;
+    ViewPagerAdapter viewPagerAdapter;
+
+
     String nomeFarmacia;
     private GoogleMap mMap;
 
@@ -37,8 +53,9 @@ public class Act_Produto extends AppCompatActivity implements OnMapReadyCallback
 
         //map
         MapFragment mapFragment = (MapFragment) getFragmentManager()
-                .findFragmentById(R.id.map);
+                .findFragmentById(map);
         mapFragment.getMapAsync(this);
+
 
         //toolbar
         toolbar = (Toolbar) findViewById(R.id.app_bar);
@@ -46,25 +63,18 @@ public class Act_Produto extends AppCompatActivity implements OnMapReadyCallback
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle(nomeFarmacia);
 
-        RecyclerView rv = (RecyclerView) findViewById(R.id.produto_recycler_view);
+        //tablayout
 
-        //creating sample data
-        List<Produto> produtosList = new ArrayList<>();
-        int qt_produtos = 50;
-        Produto[] lista_produto = new Produto[qt_produtos];
-        for (int i = 0; i < qt_produtos; i++) {
-            lista_produto[i] = new Produto(i, 1, "Produto " + i, "Nome produto " + i, (double) i);
-            produtosList.add(lista_produto[i]);
-        }
+        tabLayout = (TabLayout) findViewById(R.id.tabLayout);
+        viewPager = (ViewPager) findViewById(R.id.viewPager);
+        viewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager());
 
-        //setting produto adapter
-        ProdutoAdapter pa = new ProdutoAdapter(produtosList);
-        rv.setAdapter(pa);
+        viewPagerAdapter.addFragments(new RecyclerView_Produtos(), "Produtos");
+        viewPagerAdapter.addFragments(new fragment_farmacia_info(), "Informações");
 
-        //Layout manager
-        LinearLayoutManager llm = new LinearLayoutManager(this);
-        llm.setOrientation(LinearLayoutManager.VERTICAL);
-        rv.setLayoutManager(llm);
+        viewPager.setAdapter(viewPagerAdapter);
+        tabLayout.setupWithViewPager(viewPager);
+
 
         populateView();
 
@@ -88,9 +98,16 @@ public class Act_Produto extends AppCompatActivity implements OnMapReadyCallback
 
     @Override
     public void onMapReady(GoogleMap map) {
+
+        LatLng latLng = new LatLng(-19.919694, -43.939474);
         map.addMarker(new MarkerOptions()
-                .position(new LatLng(0, 0))
+                .position(latLng)
                 .title("Marker"));
+
+        CameraPosition cameraPosition = new CameraPosition.Builder().target(latLng).zoom(14.0f).build();
+        CameraUpdate cameraUpdate = CameraUpdateFactory.newCameraPosition(cameraPosition);
+        map.moveCamera(cameraUpdate);
+        map.getUiSettings().setScrollGesturesEnabled(false);
 
     }
 }

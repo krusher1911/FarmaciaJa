@@ -10,8 +10,12 @@
         <item name="android:windowIsTranslucent">true</item>
         <item name="android:colorControlHighlight">@color/colorHighLight</item>
         <item name="android:editTextStyle">@style/EditTextTheme</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorAccent">@color/primaryColor</item>
 
+    </style>
+
+    <style name="CustomTabLayout" parent="Widget.Design.TabLayout">
+        <item name="tabIndicatorColor">@color/primaryColor</item>
     </style>
 
     <style name="EditTextTheme" parent="android:Widget.Material.EditText">
