@@ -10,6 +10,7 @@
         <item name="android:windowIsTranslucent">true</item>
         <item name="android:colorControlHighlight">@color/colorHighLight</item>
         <item name="android:editTextStyle">@style/EditTextTheme</item>
+        <item name="colorAccent">@color/colorAccent</item>
 
     </style>
 

@@ -23,9 +23,9 @@ import br.com.farmaciaja.una.tidir.farmaciaja.activities.Act_Produto;
  */
 public class FarmaciasAdapter extends RecyclerView.Adapter<FarmaciasAdapter.FarmaciasViewHolder>
 {
-    private LayoutInflater layoutInflater;
     List<RecyclerViewFarmacias> farmaciasList = Collections.emptyList();
     Context context;
+    private LayoutInflater layoutInflater;
 
     public FarmaciasAdapter(Context context, List<RecyclerViewFarmacias> data)
     {
@@ -96,9 +96,9 @@ public class FarmaciasAdapter extends RecyclerView.Adapter<FarmaciasAdapter.Farm
         }
 
         @Override
-        public void onClick(View v)
-        {
+        public void onClick(View v) {
             Intent intent = new Intent(context, Act_Produto.class);
+            intent.putExtra("nomeFarmacia", txtNomeFarmacia.getText());
             context.startActivity(intent);
         }
     }
