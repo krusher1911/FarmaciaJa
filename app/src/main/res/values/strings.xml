@@ -53,4 +53,11 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_act__produto">Act_Produto</string>
+    <string name="large_text">Uso Oral\n\nUso Adulto\n\nLaboratório: Medley\n\nComprimidos revestidos de 80 mg, 160 mg e 320 mg: embalagens com 30 comprimidos.</string>
+    <string name="dialog_message">Selecione a Quantidade</string>
+    <string name="dialog_title">Quantidade</string>
+    <string name="ok">Ok</string>
+    <string name="cancel">Cancelar</string>
+    <string name="add_carrinho">Produto adicionado ao carrinho</string>
 </resources>

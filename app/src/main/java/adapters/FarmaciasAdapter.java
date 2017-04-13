@@ -9,14 +9,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.Collections;
 import java.util.List;
 
 import Extras.RecyclerViewFarmacias;
 import br.com.farmaciaja.una.tidir.farmaciaja.R;
-import br.com.farmaciaja.una.tidir.farmaciaja.activities.Act_Produto;
+import br.com.farmaciaja.una.tidir.farmaciaja.activities.Act_farmacia;
 
 /**
  * Created by bravo3465 on 31/10/15.
@@ -37,7 +36,7 @@ public class FarmaciasAdapter extends RecyclerView.Adapter<FarmaciasAdapter.Farm
     @Override
     public FarmaciasViewHolder onCreateViewHolder(ViewGroup parent, int viewType)
     {
-        View view = layoutInflater.inflate(R.layout.farmacias_custom_row, parent, false);
+        View view = layoutInflater.inflate(R.layout.row_farmacias, parent, false);
 
         FarmaciasViewHolder holder = new FarmaciasViewHolder(view);
 
@@ -97,7 +96,7 @@ public class FarmaciasAdapter extends RecyclerView.Adapter<FarmaciasAdapter.Farm
 
         @Override
         public void onClick(View v) {
-            Intent intent = new Intent(context, Act_Produto.class);
+            Intent intent = new Intent(context, Act_farmacia.class);
             intent.putExtra("nomeFarmacia", txtNomeFarmacia.getText());
             context.startActivity(intent);
         }

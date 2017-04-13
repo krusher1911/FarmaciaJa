@@ -1,8 +1,8 @@
 package br.com.farmaciaja.una.tidir.farmaciaja.activities;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
@@ -17,15 +17,10 @@ import br.com.farmaciaja.una.tidir.farmaciaja.R;
 
 public class Act_Cadastro extends AppCompatActivity implements View.OnClickListener{
 
-    //OBJETOS
-    private Toolbar toolbar;
-
     //ENTIDADES
     Usuario usuario;
-
     //DAL
     UsuarioDal usuarioDal;
-
     //VIEWS
     EditText txtNome;
     EditText txtEmail;
@@ -36,6 +31,8 @@ public class Act_Cadastro extends AppCompatActivity implements View.OnClickListe
     EditText txtConfirmarSenha;
     CheckBox chkLogar;
     Button btnCadastrar;
+    //OBJETOS
+    private Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -188,7 +185,7 @@ public class Act_Cadastro extends AppCompatActivity implements View.OnClickListe
 
             Toast.makeText(this, "Cadastro realizado com Sucesso!", Toast.LENGTH_SHORT).show();
 
-            Intent intent = new Intent(this, Act_farmacias.class);
+            Intent intent = new Intent(this, Act_home.class);
             startActivity(intent);
 
             finish();

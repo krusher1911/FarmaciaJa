@@ -1,6 +1,7 @@
 package fragments;
 
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
@@ -22,6 +23,8 @@ import br.com.farmaciaja.una.tidir.farmaciaja.R;
  */
 public class RecyclerView_Produtos extends Fragment {
 
+    Context context;
+
 
     public RecyclerView_Produtos() {
         // Required empty public constructor
@@ -31,8 +34,10 @@ public class RecyclerView_Produtos extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
         // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.fragment_farmacia_recyclerview_produtos, container, false);
+        context = rootView.getContext();
         RecyclerView rv = (RecyclerView) rootView.findViewById(R.id.produto_recycler_view);
 
         //creating sample data
@@ -45,7 +50,7 @@ public class RecyclerView_Produtos extends Fragment {
         }
 
         //setting produto adapter
-        ProdutoAdapter pa = new ProdutoAdapter(produtosList);
+        ProdutoAdapter pa = new ProdutoAdapter(produtosList, context);
         rv.setAdapter(pa);
 
         //Layout manager

@@ -1,26 +1,26 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context="br.com.farmaciaja.una.tidir.farmaciaja.activities.Act_farmacias">
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="br.com.farmaciaja.una.tidir.farmaciaja.activities.Act_home">
 
     <item
         android:id="@+id/action_settings"
-        android:title="@string/action_settings"
         android:orderInCategory="100"
+        android:title="@string/action_settings"
         app:showAsAction="never" />
 
     <item
         android:id="@+id/procurar"
-        android:title="@string/action_procurar"
+        android:icon="@drawable/ic_magnify_white_24dp"
         android:orderInCategory="200"
-        app:showAsAction="always"
-        android:icon="@drawable/ic_magnify_white_24dp"/>
+        android:title="@string/action_procurar"
+        app:showAsAction="always" />
 
     <item android:id="@+id/action_map"
-        android:title="Maps"
-        android:orderInCategory="300"
-        app:showAsAction="always"
         android:icon="@drawable/ic_map_marker_radius_white_24dp"
+        android:orderInCategory="300"
+        android:title="Maps"
+        app:showAsAction="always"
         />
 
 </menu>

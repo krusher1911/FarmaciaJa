@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
     android:orientation="vertical"
-
     tools:context="br.com.farmaciaja.una.tidir.farmaciaja.activities.Act_Produto">
 
     <include
@@ -13,49 +13,46 @@
         layout="@layout/app_bar" />
 
     <android.support.design.widget.CoordinatorLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:id="@+id/coordinatorLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
 
         <android.support.design.widget.AppBarLayout
-
-            android:id="@+id/main.appbar"
+            android:id="@+id/app_bar"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="@dimen/app_bar_height"
+            android:fitsSystemWindows="true"
+            android:theme="@style/AppTheme.AppBarOverlay">
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                app:layout_scrollFlags="scroll|enterAlways">
 
-                <include
-                    android:id="@+id/header_farmacia"
-                    layout="@layout/header_farmacia" />
-
-            </LinearLayout>
-
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/remedios"
+                app:layout_scrollFlags="scroll|snap" />
         </android.support.design.widget.AppBarLayout>
 
-        <LinearLayout
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fab"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
+            android:layout_margin="@dimen/fab_margin"
+            android:src="@drawable/ic_add_scart"
+            app:layout_anchor="@id/app_bar"
+            app:layout_anchorGravity="bottom|end" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-            <android.support.design.widget.TabLayout
-                android:id="@+id/tabLayout"
-                style="@style/CustomTabLayout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:tabGravity="fill"
-                app:tabMode="fixed" />
+            <include
+                android:id="@+id/contentProduto"
+                layout="@layout/fragment_content_produto" />
 
-            <android.support.v4.view.ViewPager
-                android:id="@+id/viewPager"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
         </LinearLayout>
 
-
     </android.support.design.widget.CoordinatorLayout>
+
 </LinearLayout>

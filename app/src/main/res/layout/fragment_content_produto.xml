@@ -1,0 +1,53 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="layout.fragment_content_produto">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textView_nome_medicamento"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/text_margin"
+                android:text="Valsartana 80mg - Caixa"
+                android:textColor="@color/preto"
+                android:textSize="18dp" />
+
+            <TextView
+                android:id="@+id/textView_preco"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textView_nome_medicamento"
+                android:layout_marginLeft="@dimen/text_marginSub1"
+                android:text="R$ 69,50" />
+
+            <TextView
+                android:id="@+id/textView_descricaoLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textView_preco"
+                android:layout_margin="@dimen/text_margin"
+                android:text="Descrição"
+                android:textAllCaps="true"
+                android:textColor="@color/preto" />
+
+            <TextView
+                android:id="@+id/textView_descricao"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textView_descricaoLabel"
+                android:layout_margin="@dimen/text_marginSub1"
+                android:text="@string/large_text" />
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+</FrameLayout>

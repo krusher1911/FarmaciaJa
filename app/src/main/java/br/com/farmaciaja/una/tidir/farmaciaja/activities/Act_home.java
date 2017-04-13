@@ -2,7 +2,6 @@ package br.com.farmaciaja.una.tidir.farmaciaja.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -17,12 +16,12 @@ import java.util.List;
 
 import DAL.FarmaciaDal;
 import Entidades.Farmacia;
-import adapters.FarmaciasAdapter;
 import Extras.RecyclerViewFarmacias;
-import fragments.frag_navigator;
+import adapters.FarmaciasAdapter;
 import br.com.farmaciaja.una.tidir.farmaciaja.R;
+import fragments.frag_navigator;
 
-public class Act_farmacias extends AppCompatActivity
+public class Act_home extends AppCompatActivity
 {
     //DAL
     public FarmaciaDal farmaciaDal;
@@ -40,7 +39,7 @@ public class Act_farmacias extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.act_farmacias);
+        setContentView(R.layout.act_home);
 
         //DAL
         farmaciaDal = new FarmaciaDal(this);
@@ -68,6 +67,7 @@ public class Act_farmacias extends AppCompatActivity
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.list_farmacias);
 
         FarmaciasAdapter adapter = new FarmaciasAdapter(this, this.carregarItensMenu());
+
 
         recyclerView.setAdapter(adapter);
 
@@ -103,7 +103,7 @@ public class Act_farmacias extends AppCompatActivity
     @Override
     public boolean onCreateOptionsMenu(Menu menu)
     {
-        getMenuInflater().inflate(R.menu.menu_act_farmacias, menu);
+        getMenuInflater().inflate(R.menu.menu_act_home, menu);
         return true;
     }
 
