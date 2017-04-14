@@ -6,10 +6,19 @@ package Extras;
 public class RecyclerViewFarmacias  {
 
     private int iconId;
+    private int idFarmacia;
     private String NomeFarmacia;
     private String MediaNota;
     private String MediaTempo;
     private boolean Aberto;
+
+    public int getIdFarmacia() {
+        return idFarmacia;
+    }
+
+    public void setIdFarmacia(int idFarmacia) {
+        this.idFarmacia = idFarmacia;
+    }
 
     public int getIconId() {
         return iconId;

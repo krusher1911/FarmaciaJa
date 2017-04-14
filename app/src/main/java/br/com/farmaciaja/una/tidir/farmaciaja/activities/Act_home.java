@@ -44,6 +44,8 @@ public class Act_home extends AppCompatActivity
         //DAL
         farmaciaDal = new FarmaciaDal(this);
 
+        //popularFarmacias();
+
         //ENDTIDADES
         farmacia = new Farmacia();
 
@@ -60,7 +62,25 @@ public class Act_home extends AppCompatActivity
         navigationDrawer.setUp((DrawerLayout) findViewById(R.id.drawer_layout), toolbar);
 
         criarRecylerView();
+
     }
+
+    private void popularFarmacias() {
+        Farmacia farmacia = new Farmacia();
+
+        for (int i = 0; i < 10; i++) {
+            farmacia.setDescFarmacia("Farmacia DB " + i);
+            farmacia.setEndereco("Endereco DB " + i);
+            farmacia.setInformacoesFarmacia("Info " + i);
+            farmacia.setMediaNotaAtendimento((float) i);
+            farmacia.setMediaTempoEntrega((float) (60 - i));
+            farmaciaDal.salvarNovaFarmacia(farmacia);
+
+        }
+
+
+    }
+
 
     private void criarRecylerView()
     {
@@ -76,28 +96,31 @@ public class Act_home extends AppCompatActivity
 
     public List<RecyclerViewFarmacias> carregarItensMenu()
     {
-        List<RecyclerViewFarmacias> slideMenuItens = new ArrayList<>();
+        List<RecyclerViewFarmacias> farmaciaMenuItens = new ArrayList<>();
 
-        int[] icons = {R.drawable.account_circle, R.drawable.account_circle, R.drawable.account_circle };
-        String[] titulos = {"Araujo", "Pacheco", "Droga Clara"};
-        String[] notas = {"4.6", "3.9" , "4,3"};
-        String[] tempo = {"30", "25", "35"};
-        boolean[] situacao = {true, false, true};
+        int[] icons = {R.drawable.account_circle};
 
-        for (int i = 0; i < icons.length; i++)
+
+        LinkedList farmaciaList = new LinkedList();
+        farmaciaList = farmaciaDal.buscarFarmacias();
+        Farmacia tempFarmacia;
+
+        for (int i = 0; i < farmaciaList.size(); i++)
         {
             RecyclerViewFarmacias item = new RecyclerViewFarmacias();
+            tempFarmacia = (Farmacia) farmaciaList.get(i);
 
-            item.setIconId(icons[i]);
-            item.setNomeFarmacia(titulos[i]);
-            item.setMediaNota(notas[i]);
-            item.setMediaTempo(tempo[i]);
-            item.setAberto(situacao[i]);
+            item.setIconId(icons[0]);
+            item.setIdFarmacia(tempFarmacia.get_id());
+            item.setNomeFarmacia(tempFarmacia.getDescFarmacia());
+            item.setMediaNota(Float.toString(tempFarmacia.getMediaNotaAtendimento()));
+            item.setMediaTempo(Float.toString(tempFarmacia.getMediaTempoEntrega()));
+            item.setAberto(true);
 
-            slideMenuItens.add(item);
+            farmaciaMenuItens.add(item);
         }
 
-        return slideMenuItens;
+        return farmaciaMenuItens;
     }
 
     @Override

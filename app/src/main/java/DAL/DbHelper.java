@@ -11,17 +11,17 @@ import Entidades.Usuario;
 
 /**
  * Created by bravo3465 on 10/10/15.
- */
+ * edited by Krusher on 13/04/17
+ **/
 public class DbHelper extends SQLiteOpenHelper {
-
-    //ENTIDADES
-    Farmacia farmacia;
-    Produto produto;
-    Usuario usuario;
 
     //VARIAVEIS
     static final String DBNAME = "FarmaciaJa_DB";
     static final int DB_VEESION = 1;
+    //ENTIDADES
+    Farmacia farmacia;
+    Produto produto;
+    Usuario usuario;
 
     public DbHelper(Context context)
     {
@@ -59,7 +59,25 @@ public class DbHelper extends SQLiteOpenHelper {
     {
         try
         {
-            String query = "CREATE TABLE FARMACIAS ( _id integer primary key autoincrement, desc_farmacia text, media_tempo )";
+
+            //TABLE FARMACIA
+            //int _id;
+            //String descFarmacia;
+            //String endereco;
+            //float mediaTempoEntrega;
+            //float mediaNotaAtendimento;
+            //String informacoesFarmacia;
+            //Time horaDeAbertura;
+            //Time horaDeFechamento;
+
+            String query = "CREATE TABLE FARMACIAS ( _id integer primary key autoincrement" + //0
+                    ", descFarmacia text NOT NULL" + //1
+                    ", endereco text" + //2
+                    ", mediaTempoEntrega float(10,2)" + //3
+                    ", mediaNotaAtendimento float(10,2)" + //4
+                    ", informacoesFarmacia TEXT" + //5
+                    ", horaDeAbertura TIME" + //6
+                    ", horaDeFechamento TIME)"; //7
 
             db.execSQL(query);
         }

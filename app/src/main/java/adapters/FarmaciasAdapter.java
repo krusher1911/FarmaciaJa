@@ -52,6 +52,7 @@ public class FarmaciasAdapter extends RecyclerView.Adapter<FarmaciasAdapter.Farm
         holder.txtNomeFarmacia.setText(itens.getNomeFarmacia());
         holder.txtTempoAtendimento.setText(itens.getMediaTempo());
         holder.txtMediaNota.setText(itens.getMediaNota());
+        holder.idFarmacia.setText(Integer.toString(itens.getIdFarmacia()));
 
         if(itens.isAberto())
         {
@@ -80,11 +81,13 @@ public class FarmaciasAdapter extends RecyclerView.Adapter<FarmaciasAdapter.Farm
         TextView txtTempoAtendimento;
         TextView txtMediaNota;
         TextView txtAbertoFechado;
+        TextView idFarmacia;
 
 
         public FarmaciasViewHolder(View itemView) {
             super(itemView);
 
+            idFarmacia = (TextView) itemView.findViewById(R.id.id_farmacia);
             txtNomeFarmacia = (TextView) itemView.findViewById(R.id.txtNomeFarmacia);
             icon = (ImageView) itemView.findViewById(R.id.imgFarmacia);
             txtTempoAtendimento = (TextView) itemView.findViewById(R.id.txtTempoAtendimento);
@@ -97,7 +100,7 @@ public class FarmaciasAdapter extends RecyclerView.Adapter<FarmaciasAdapter.Farm
         @Override
         public void onClick(View v) {
             Intent intent = new Intent(context, Act_farmacia.class);
-            intent.putExtra("nomeFarmacia", txtNomeFarmacia.getText());
+            intent.putExtra("idFarmacia", idFarmacia.getText());
             context.startActivity(intent);
         }
     }

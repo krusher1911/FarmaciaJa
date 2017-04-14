@@ -5,14 +5,14 @@ package Entidades;
  */
 public class Produto {
 
-    private int produto_id;
+    private int _id;
     private int farmacia_id;
     private String descProduto;
     private String nomeProduto;
     private Double valorProduto;
 
     public Produto(int _id, int farmacia_id, String descProduto, String nomeProduto, Double valorProduto) {
-        this.produto_id = _id;
+        this._id = _id;
         this.farmacia_id = farmacia_id;
         this.descProduto = descProduto;
         this.nomeProduto = nomeProduto;
@@ -23,11 +23,11 @@ public class Produto {
     }
 
     public int get_id() {
-        return produto_id;
+        return _id;
     }
 
     public void set_id(int produto_id) {
-        this.produto_id = produto_id;
+        this._id = produto_id;
     }
 
     public int getFarmacia_id() {

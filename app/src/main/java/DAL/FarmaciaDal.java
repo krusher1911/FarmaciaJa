@@ -11,8 +11,9 @@ import java.util.LinkedList;
 import Entidades.Farmacia;
 
 /**
- * Created by bravo3465 on 11/10/15.
- */
+ * Created by bravo3465 on 10/10/15.
+ * edited by Krusher on 13/04/17
+ **/
 public class FarmaciaDal
 {
     SQLiteDatabase db;
@@ -31,7 +32,19 @@ public class FarmaciaDal
             db = dbHelper.getWritableDatabase();
             values = new ContentValues();
 
-            values.put("desc_farmacia", farmacia.getDescFarmacia());
+            //TABLE FARMACIA
+            //int _id;
+            //String descFarmacia;
+            //String endereco;
+            //float mediaTempoEntrega;
+            //float mediaNotaAtendimento;
+            //String informacoesFarmacia;
+
+            values.put("descFarmacia", farmacia.getDescFarmacia());
+            values.put("endereco", farmacia.getEndereco());
+            values.put("mediaTempoEntrega", farmacia.getMediaTempoEntrega());
+            values.put("mediaNotaAtendimento", farmacia.getMediaNotaAtendimento());
+            values.put("informacoesFarmacia", farmacia.getInformacoesFarmacia());
 
             try
             {
@@ -48,8 +61,7 @@ public class FarmaciaDal
         }
     }
 
-    public LinkedList buscarFarmacias()
-    {
+    public LinkedList buscarFarmacias() {
         db = dbHelper.getReadableDatabase();
         Farmacia farmacia;
         LinkedList listFarmacias = new LinkedList();
@@ -64,6 +76,8 @@ public class FarmaciaDal
 
                 farmacia.set_id(Integer.parseInt(cursor.getString(0)));
                 farmacia.setDescFarmacia(cursor.getString(1));
+                farmacia.setMediaTempoEntrega(Float.parseFloat(cursor.getString(3)));
+                farmacia.setMediaNotaAtendimento(Float.parseFloat(cursor.getString(4)));
 
                 listFarmacias.add(farmacia);
             }
@@ -79,4 +93,32 @@ public class FarmaciaDal
 
         return listFarmacias;
     }
+
+    public Farmacia getObjectById(int id) {
+
+        db = dbHelper.getReadableDatabase();
+
+        Cursor cursor = db.rawQuery("SELECT * FROM FARMACIAS WHERE _id = " + id, null);
+
+        Farmacia farmacia = new Farmacia();
+
+        try {
+            while (cursor.moveToNext()) {
+                farmacia = new Farmacia();
+
+                farmacia.set_id(Integer.parseInt(cursor.getString(0)));
+                farmacia.setDescFarmacia(cursor.getString(1));
+                farmacia.setMediaTempoEntrega(Float.parseFloat(cursor.getString(3)));
+                farmacia.setMediaNotaAtendimento(Float.parseFloat(cursor.getString(4)));
+
+            }
+        } catch (Exception ex) {
+            Log.e("buscarFarmacias", ex.getMessage());
+        } finally {
+            cursor.close();
+        }
+
+        return farmacia;
+    }
+
 }

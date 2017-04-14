@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import java.text.NumberFormat;
 import java.util.List;
 
 import Entidades.Produto;
@@ -38,7 +39,7 @@ public class ProdutoAdapter extends RecyclerView.Adapter<ProdutoAdapter.MyViewHo
     public void onBindViewHolder(MyViewHolder holder, int position) {
         Produto p = produtoList.get(position);
         holder.nomeProduto.setText(p.getNomeProduto());
-        holder.valorProduto.setText(String.valueOf(p.getValorProduto()));
+        holder.valorProduto.setText(NumberFormat.getCurrencyInstance().format(p.getValorProduto()));
     }
 
     @Override

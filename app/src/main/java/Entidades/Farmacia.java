@@ -7,9 +7,11 @@ public class Farmacia
 {
     private int _id;
     private String descFarmacia;
-    private Endereco endereco;
+    private String endereco;
     private float mediaTempoEntrega;
     private float mediaNotaAtendimento;
+    private String informacoesFarmacia;
+
 
     public int get_id() {
         return _id;
@@ -27,11 +29,11 @@ public class Farmacia
         this.descFarmacia = descFarmacia;
     }
 
-    public Endereco getEndereco() {
+    public String getEndereco() {
         return endereco;
     }
 
-    public void setEndereco(Endereco endereco) {
+    public void setEndereco(String endereco) {
         this.endereco = endereco;
     }
 
@@ -49,5 +51,25 @@ public class Farmacia
 
     public void setMediaNotaAtendimento(float mediaNotaAtendimento) {
         this.mediaNotaAtendimento = mediaNotaAtendimento;
+    }
+
+    public String getInformacoesFarmacia() {
+        return informacoesFarmacia;
+    }
+
+    public void setInformacoesFarmacia(String informacoesFarmacia) {
+        this.informacoesFarmacia = informacoesFarmacia;
+    }
+
+    @Override
+    public String toString() {
+        return "Farmacia{" +
+                "_id=" + _id +
+                ", descFarmacia='" + descFarmacia + '\'' +
+                ", endereco='" + endereco + '\'' +
+                ", mediaTempoEntrega=" + mediaTempoEntrega +
+                ", mediaNotaAtendimento=" + mediaNotaAtendimento +
+                ", informacoesFarmacia='" + informacoesFarmacia + '\'' +
+                '}';
     }
 }

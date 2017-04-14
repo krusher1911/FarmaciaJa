@@ -19,6 +19,8 @@ import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
+import DAL.FarmaciaDal;
+import Entidades.Farmacia;
 import adapters.ViewPagerAdapter;
 import br.com.farmaciaja.una.tidir.farmaciaja.R;
 import fragments.RecyclerView_Produtos;
@@ -31,10 +33,15 @@ public class Act_farmacia extends AppCompatActivity implements OnMapReadyCallbac
     TabLayout tabLayout;
     ViewPager viewPager;
     ViewPagerAdapter viewPagerAdapter;
-
-
+    int idFarmacia;
     String nomeFarmacia;
+    FarmaciaDal farmaciaDal = new FarmaciaDal(this);
+    Farmacia farmacia;
+    private TextView txtTempoAtendimento;
+    private TextView txtMediaAtendimento;
+    private TextView descFarmacia;
     private GoogleMap mMap;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,7 +49,7 @@ public class Act_farmacia extends AppCompatActivity implements OnMapReadyCallbac
         setContentView(R.layout.act_farmacia);
 
         Intent myIntent = getIntent();
-        nomeFarmacia = myIntent.getStringExtra("nomeFarmacia");
+        idFarmacia = Integer.parseInt(myIntent.getStringExtra("idFarmacia"));
 
         //map
         MapFragment mapFragment = (MapFragment) getFragmentManager()
@@ -82,8 +89,25 @@ public class Act_farmacia extends AppCompatActivity implements OnMapReadyCallbac
 
     public void populateView() {
 
-        TextView t = (TextView) findViewById(R.id.textView_titulo_farmacia);
-        t.setText(nomeFarmacia);
+        double intervaloMedia = 7.5;
+        int tempoMediaMin;
+        int tempoMediaMax;
+        String sMedia;
+        String nota;
+
+        farmacia = farmaciaDal.getObjectById(idFarmacia);
+
+        descFarmacia = (TextView) findViewById(R.id.textView_titulo_farmacia);
+        descFarmacia.setText(farmacia.getDescFarmacia());
+
+        txtTempoAtendimento = (TextView) findViewById(R.id.txtTempoAtendimento);
+        tempoMediaMin = (int) (farmacia.getMediaTempoEntrega() - intervaloMedia);
+        tempoMediaMax = (int) (farmacia.getMediaTempoEntrega() + intervaloMedia);
+        sMedia = tempoMediaMin + " - " + tempoMediaMax;
+        txtTempoAtendimento.setText(sMedia);
+
+        txtMediaAtendimento = (TextView) findViewById(R.id.txtMediaAtendimento);
+
     }
 
     public boolean onOptionsItemSelected(MenuItem item) {
