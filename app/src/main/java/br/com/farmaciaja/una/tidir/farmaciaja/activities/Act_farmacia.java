@@ -56,12 +56,13 @@ public class Act_farmacia extends AppCompatActivity implements OnMapReadyCallbac
                 .findFragmentById(map);
         mapFragment.getMapAsync(this);
 
+        populateView();
 
         //toolbar
         toolbar = (Toolbar) findViewById(R.id.app_bar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setTitle(nomeFarmacia);
+        getSupportActionBar().setTitle(farmacia.getDescFarmacia());
 
         //tablayout
 
@@ -74,9 +75,6 @@ public class Act_farmacia extends AppCompatActivity implements OnMapReadyCallbac
 
         viewPager.setAdapter(viewPagerAdapter);
         tabLayout.setupWithViewPager(viewPager);
-
-
-        populateView();
 
     }
 

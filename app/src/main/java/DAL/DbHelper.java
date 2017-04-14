@@ -52,6 +52,8 @@ public class DbHelper extends SQLiteOpenHelper {
         catch (Exception ex)
         {
             Log.e("onUpgrade", ex.getMessage());
+        } finally {
+            db.close();
         }
     }
 
@@ -84,6 +86,8 @@ public class DbHelper extends SQLiteOpenHelper {
         catch (Exception ex)
         {
             Log.e("criarTabelaFarmacia", ex.getMessage());
+        } finally {
+            db.close();
         }
     }
 
@@ -99,6 +103,8 @@ public class DbHelper extends SQLiteOpenHelper {
         catch (Exception ex)
         {
             Log.e("criarTabelaUsuario", ex.getMessage());
+        } finally {
+            db.close();
         }
     }
 }

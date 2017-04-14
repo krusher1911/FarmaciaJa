@@ -3,25 +3,28 @@
     android:id="@+id/farmacias_list_item"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="10dp">
+    android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="70dp"
+        android:layout_height="72dp"
         android:background="@color/branco"
         android:orientation="horizontal">
 
         <ImageView
             android:id="@+id/imgFarmacia"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:padding="10dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="16dp"
             android:src="@drawable/account_circle" />
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
             android:orientation="vertical">
 
             <LinearLayout
@@ -39,11 +42,9 @@
                         android:id="@+id/txtNomeFarmacia"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="0dp"
-                        android:layout_marginTop="5dp"
-                        android:fontFamily="Roboto Medium"
-                        android:text="Nome Farmacia"
 
+                        android:fontFamily="Roboto Regular"
+                        android:text="Nome Farmacia"
                         android:textSize="16sp"
                         android:textStyle="bold" />
 
@@ -52,15 +53,12 @@
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight=".1"
                     android:orientation="horizontal">
 
                     <TextView
                         android:id="@+id/txtAbertoFechado"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginTop="5dp"
                         android:fontFamily="Roboto Regular"
                         android:text="Aberto"
                         android:textSize="16sp" />
@@ -72,7 +70,7 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="5dp"
                 android:orientation="horizontal">
 
                 <ImageView
@@ -96,7 +94,7 @@
                     android:layout_height="20dp"
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="5dp"
-                    android:src="@android:drawable/star_big_off" />
+                    android:src="@drawable/ic_star" />
 
                 <TextView
                     android:id="@+id/txtMediaAtendimento"
@@ -105,6 +103,7 @@
                     android:layout_gravity="bottom"
                     android:fontFamily="Roboto Regular"
                     android:text="5.0"
+                    android:textColor="@color/amareloEscuro"
                     android:textSize="14sp" />
 
 
@@ -116,7 +115,7 @@
 
     <View android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="@color/cinza_escuro">
+        android:background="@color/cinza_claro">
 
     </View>
 

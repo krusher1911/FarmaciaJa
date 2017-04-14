@@ -6,7 +6,8 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@color/branco">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -14,12 +15,12 @@
 
             <TextView
                 android:id="@+id/textView_nome_medicamento"
+                style="@style/ComponentTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/text_margin"
-                android:text="Valsartana 80mg - Caixa"
-                android:textColor="@color/preto"
-                android:textSize="18dp" />
+                android:text="Valsartana 80mg - Caixa" />
+
 
             <TextView
                 android:id="@+id/textView_preco"
@@ -29,11 +30,19 @@
                 android:layout_marginLeft="@dimen/text_marginSub1"
                 android:text="R$ 69,50" />
 
+            <View
+                android:id="@+id/separador1"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/textView_preco"
+                android:layout_marginTop="16dp"
+                android:background="@color/cinza_claro"></View>
+
             <TextView
                 android:id="@+id/textView_descricaoLabel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/textView_preco"
+                android:layout_below="@id/separador1"
                 android:layout_margin="@dimen/text_margin"
                 android:text="Descrição"
                 android:textAllCaps="true"
